@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //Model
+        let guessNumber = 237;
+        let secretNumber = 60;
+
+        //View
+        updateView()
+        function updateView(){
+            const isCorrectOrNotText = '';
+            document.getElementById('app').innerHTML = /*HTML*/ `
+            <h2>Tipp-tallet-spillet</h2>
+        
+            Du tippet ${guessNumber}.<br>
+            ${isCorrectOrNotText}
+            
+            men det er for lavt. Tipp igjen.<br>
+            <input type="text"> <button onClick=submitNumber()>Tipp</button>
+            
+            
+            `
+        }
+
+        //Controller
+        function submitNumber(){
+
+        }
+    </script>
+</body>
+</html>
