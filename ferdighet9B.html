@@ -7,6 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="screen"></div>
 </body>
+<script>
+    //Model
+    let txt1 = '';
+    let txt2 = '';
+    let txt3 = '';
+    let displayInfo = '';
+
+
+    //View
+    updateView()
+    function updateView(){
+    
+        document.getElementById('screen').innerHTML = /*HTML*/ `
+        <p>Ferdighet 9b - Valgsetninger - Sammenligne tre tekster</p>
+        <div id="info"></div>
+        <p>Endre på  tekstene!</p>
+        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt1=this.value" value="${txt1}"><br>
+        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt2=this.value" value="${txt2}"><br>
+        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt3=this.value" value="${txt3}"><br>
+        `
+        
+    }
+    function updateDisplay(){
+        if (txt1 == txt2) {displayInfo += 'Tekst 1 og 2 er like<br/>';}
+        else if (txt1 != txt2) {displayInfo += '<del>Tekst 1 og 2 er like</del><br/>';}
+        if (txt1 == txt3) {displayInfo += 'Tekst 1 og 3 er like<br/>';}
+        else if (txt1 != txt3) {displayInfo += '<del>Tekst 1 og 3 er like</del><br/>';}
+        if (txt3 == txt2) {displayInfo += 'Tekst 2 og 3 er like<br/>';}
+        else if (txt3 != txt2) {displayInfo += '<del>Tekst 2 og 3 er like</del><br/>';}
+        document.getElementById('info').innerHTML = `${displayInfo}`
+    }
+    //Controller
+    findFirst()
+    function findFirst(){
+        
+        updateDisplay()
+    }
+</script>
 </html>
