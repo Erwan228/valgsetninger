@@ -14,7 +14,9 @@
     let txt1 = '';
     let txt2 = '';
     let txt3 = '';
-    let displayInfo = '';
+    let displayInfo1 = '';
+    let displayInfo2 = '';
+    let displayInfo3 = '';
 
 
     //View
@@ -23,22 +25,28 @@
     
         document.getElementById('screen').innerHTML = /*HTML*/ `
         <p>Ferdighet 9b - Valgsetninger - Sammenligne tre tekster</p>
-        <div id="info"></div>
+        <div id="info1"></div>
+        <div id="info2"></div>
+        <div id="info3"></div>
         <p>Endre på  tekstene!</p>
-        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt1=this.value" value="${txt1}"><br>
-        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt2=this.value" value="${txt2}"><br>
-        <input type="text" oninput="updateDisplay()" oninput="findFirst()" oninput="txt3=this.value" value="${txt3}"><br>
+        <input type="text" oninput="updateDisplay(this, txt1)" value="${txt1}"><br>
+        <input type="text" oninput="updateDisplay(this, txt2)" value="${txt2}"><br>
+        <input type="text" oninput="updateDisplay(this, txt3)" value="${txt3}"><br>
         `
         
     }
-    function updateDisplay(){
-        if (txt1 == txt2) {displayInfo += 'Tekst 1 og 2 er like<br/>';}
-        else if (txt1 != txt2) {displayInfo += '<del>Tekst 1 og 2 er like</del><br/>';}
-        if (txt1 == txt3) {displayInfo += 'Tekst 1 og 3 er like<br/>';}
-        else if (txt1 != txt3) {displayInfo += '<del>Tekst 1 og 3 er like</del><br/>';}
-        if (txt3 == txt2) {displayInfo += 'Tekst 2 og 3 er like<br/>';}
-        else if (txt3 != txt2) {displayInfo += '<del>Tekst 2 og 3 er like</del><br/>';}
-        document.getElementById('info').innerHTML = `${displayInfo}`
+    function updateDisplay(inputValue, textValue){
+        textValue = inputValue;
+        if (txt1 === txt2) {displayInfo1 = 'Tekst 1 og 2 er like<br/>';}
+        else {displayInfo1 = '<del>Tekst 1 og 2 er like</del><br/>';};
+        if (txt1 === txt3) {displayInfo2 = 'Tekst 1 og 3 er like<br/>';}
+        else if (txt1 !== txt3) {displayInfo2 = '<del>Tekst 1 og 3 er like</del><br/>';};
+        if (txt3 === txt2) {displayInfo3 = 'Tekst 2 og 3 er like<br/>';}
+        else if (txt3 != txt2) {displayInfo3 = '<del>Tekst 2 og 3 er like</del><br/>';};
+        document.getElementById('info1').innerHTML = `${displayInfo1}`;
+        document.getElementById('info2').innerHTML = `${displayInfo2}`;
+        document.getElementById('info3').innerHTML = `${displayInfo3}`;
+        return (textValue);
     }
     //Controller
     findFirst()
