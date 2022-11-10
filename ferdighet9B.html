@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/Terjes9B.html">Terjes 9B</a>
+    <a href="/guessNumberGame.html">guessnumber</a>
+    <a href="/index.html">index</a>
     <div id="screen"></div>
 </body>
 <script>
@@ -18,7 +21,6 @@
     let displayInfo2 = '';
     let displayInfo3 = '';
 
-
     //View
     updateView()
     function updateView(){
@@ -28,6 +30,8 @@
         <div id="info1"></div>
         <div id="info2"></div>
         <div id="info3"></div>
+        <p>Om vi sorterer de tre tekstene alfabetisk, er denne den første:<br>
+        <div id="firstNameAlfa"></div>
         <p>Endre på  tekstene!</p>
         <input type="text" oninput="updateDisplay(this.value, 'txt1')"><br>
         <input type="text" oninput="updateDisplay(this.value, 'txt2')"><br>
@@ -50,11 +54,14 @@
         document.getElementById('info2').innerHTML = `${displayInfo2}`;
         document.getElementById('info3').innerHTML = `${displayInfo3}`;
         console.log(txt1);
+        if (txt1 <= txt2 && txt1 <= txt3) {document.getElementById('firstNameAlfa').innerHTML = txt1}
+        if (txt2 <= txt1 && txt2 <= txt3) {firstNameAlfa.innerHTML = `${txt2}`}
+        if (txt3 <= txt2 && txt3 <= txt1) {firstNameAlfa.innerHTML = `${txt3}`}
+
     }
-    findFirst()
-    function findFirst(){
+    
         
         updateDisplay()
-    }
+    
 </script>
 </html>
