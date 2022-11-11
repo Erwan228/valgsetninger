@@ -37,8 +37,9 @@
         <option value="lightgrey">Light grey</option>
         <option value="lightgreen">Light green</option>
         <option value="lightcoral">Light red</option>
+        <option value="#d9e3fe">Original colors</option>
         </select>
-        <div style="height: 60px; width: 60px; background-color: ${chosenColor}; color: ${colorvalue}">Music Rioulu</div>
+        <div style="padding: 60px; height: 60px; width: 60px; background-color: ${chosenColor}; color: ${colorvalue}">Music Rioulu</div>
         `
     }
     //controller
@@ -48,6 +49,7 @@
         if (pickedColor == 'black' || pickedColor == 'darkblue'){
             colorvalue = 'white'
         }
+        else if (pickedColor == "#d9e3fe") {colorvalue = 'blue'}
         else {colorvalue = 'black'}
         updateView();
     }
