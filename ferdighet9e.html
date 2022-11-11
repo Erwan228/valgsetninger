@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         .gffdlkfdkfd {
-            color: black;
+            color: lightcoral;
         }
     </style>
 </head>
@@ -36,25 +36,20 @@
         <option value="darkblue">Dark blue</option>
         <option value="lightgrey">Light grey</option>
         <option value="lightgreen">Light green</option>
-        <option value="lightred">Light red</option>
+        <option value="lightcoral">Light red</option>
         </select>
-        <div id="displayArea"></div>
-        `
-    }
-
-    function updateDisplay(){
-        document.getElementById('displayArea').innerHTML /*HTML*/ `
         <div style="height: 60px; width: 60px; background-color: ${chosenColor}; color: ${colorvalue}">Music Rioulu</div>
         `
     }
     //controller
     function changecolor(pickedColor){
+        console.log(pickedColor)
         chosenColor = pickedColor;
         if (pickedColor == 'black' || pickedColor == 'darkblue'){
             colorvalue = 'white'
         }
         else {colorvalue = 'black'}
-        updateDisplay();
+        updateView();
     }
 </script>
 </html>
